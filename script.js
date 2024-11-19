@@ -1,29 +1,53 @@
-// Select elements
-const billInput = document.getElementById("billInput");
-const tipPercentage = document.getElementById("tipPercentage");
-const calculateButton = document.getElementById("calculateButton");
-const tipResult = document.getElementById("tipResult");
-const totalResult = document.getElementById("totalResult");
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Function to calculate tip and total
-function calculateTip() {
-    const bill = parseFloat(billInput.value);
-    const tip = parseFloat(tipPercentage.value);
+    let score = 0;
+    const totalQuestions = 5;
 
-    if (isNaN(bill) || bill <= 0) {
-        tipResult.textContent = "Please enter a valid bill amount.";
-        tipResult.style.color = "red";
-        totalResult.textContent = "";
-        return;
+    // Clear all previous feedback
+    document.querySelectorAll('.feedback').forEach(feedback => {
+        feedback.textContent = '';
+    });
+
+    // Correct answers for each question
+    const correctAnswers = {
+        q1: 'B',
+        q2: 'B',
+        q3: 'B',
+        q4: 'A',
+        q5: 'B'
+    };
+
+    // Check each question
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = 'q' + i;
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+        const feedbackElement = document.getElementById(`feedback${i}`);
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswers[questionName]) {
+                feedbackElement.textContent = '✔ Correct!';
+                feedbackElement.style.color = 'green';
+                score++;
+            } else {
+                feedbackElement.textContent = '✖ Incorrect!';
+                feedbackElement.style.color = 'red';
+            }
+        } else {
+            feedbackElement.textContent = '✖ No answer selected!';
+            feedbackElement.style.color = 'red';
+        }
     }
 
-    const tipValue = bill * tip;
-    const totalValue = bill + tipValue;
+    alert(`Your score is ${score} out of ${totalQuestions}`);
+});
 
-    tipResult.textContent = `Tip: $${tipValue.toFixed(2)}`;
-    totalResult.textContent = `Total Amount: $${totalValue.toFixed(2)}`;
-    tipResult.style.color = "green";
+function submitAssignment() {
+    const assignmentText = document.getElementById('assignmentInput').value;
+    if (assignmentText.trim() === "") {
+        alert("Please write something before submitting!");
+    } else {
+        alert("Your assignment has been submitted. Please send it to the email provided.");
+        document.getElementById('assignmentInput').value = ''; // Clear the textarea
+    }
 }
-
-// Add event listener
-calculateButton.addEventListener("click", calculateTip);
