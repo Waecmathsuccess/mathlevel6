@@ -3,25 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tip Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Functions: Understanding Linear and Quadratic Functions</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <div class="tip-calculator-container">
-        <h1>Tip Calculator</h1>
-        <div class="input-group">
-            <input type="number" id="billInput" placeholder="Bill Amount ($)" />
-            <select id="tipPercentage">
-                <option value="0.1">10% Tip</option>
-                <option value="0.15">15% Tip</option>
-                <option value="0.2">20% Tip</option>
-                <option value="0.25">25% Tip</option>
-            </select>
-        </div>
-        <button id="calculateButton">Calculate Tip</button>
-        <p id="tipResult"></p>
-        <p id="totalResult"></p>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- Video Lecture Section -->
+    <section id="lecture">
+        <h1>Video Lecture: Functions - Understanding Linear and Quadratic Functions</h1>
+        <iframe width="400" height="315" src="https://www.youtube.com/embed/CxEFOozrMSE?si=wt4wFKALOQrXbMIW" 
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Quiz: Functions - Linear and Quadratic</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. What is the general form of a linear function?</p>
+                <input type="radio" name="q1" value="A"> A. y = ax<sup>2</sup> + bx + c<br>
+                <input type="radio" name="q1" value="B"> B. y = mx + c<br>
+                <input type="radio" name="q1" value="C"> C. y = x<sup>2</sup> + c<br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. What type of graph does a quadratic function produce?</p>
+                <input type="radio" name="q2" value="A"> A. Straight line<br>
+                <input type="radio" name="q2" value="B"> B. Parabola<br>
+                <input type="radio" name="q2" value="C"> C. Circle<br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. What does the 'm' in the linear equation y = mx + c represent?</p>
+                <input type="radio" name="q3" value="A"> A. Y-intercept<br>
+                <input type="radio" name="q3" value="B"> B. Slope<br>
+                <input type="radio" name="q3" value="C"> C. Constant<br>
+                <span class="feedback" id="feedback3"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. What is the y-intercept of the function y = 2x + 3?</p>
+                <input type="radio" name="q4" value="A"> A. 3<br>
+                <input type="radio" name="q4" value="B"> B. 2<br>
+                <input type="radio" name="q4" value="C"> C. 0<br>
+                <span class="feedback" id="feedback4"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. Which of the following functions represents a quadratic equation?</p>
+                <input type="radio" name="q5" value="A"> A. y = 3x + 5<br>
+                <input type="radio" name="q5" value="B"> B. y = x<sup>2</sup> - 4x + 2<br>
+                <input type="radio" name="q5" value="C"> C. y = x + 7<br>
+                <span class="feedback" id="feedback5"></span>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </section>
+
+    <!-- Assignment Section -->
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p><strong>Assignment Question:</strong></p>
+        <p>Write a function in Python to evaluate and graph linear and quadratic functions. Provide sample input and output, and explain how the graph visually represents the behavior of each function.</p>
+        <p>Please submit your assignment by sending an email to: <a href="mailto:functionassignment101@gmail.com">functionassignment101@gmail.com</a></p>
+        <p>If the link does not work, send your assignment manually to: functionassignment101@gmail.com</p>
+        <textarea id="assignmentInput" rows="6" placeholder="Write your assignment here..."></textarea>
+        <button id="submitAssignment" onclick="submitAssignment()">Submit Assignment</button>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <h2>PLEASE DONATE</h2>
+        <p>Account Number: 2032202001590</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/GTBank_logo.svg/768px-GTBank_logo.svg.png" alt="GTBank Logo" width="150">
+        <p>Wave Mobile: 3709558</p>
+        <img src="https://s.rfi.fr/media/display/ed44f02a-c239-11ec-b0fc-005056bf8594/w:1280/p:16x9/wave-senegal-mobile-money.png" alt="Wave Mobile Logo" width="150">
+    </section>
+
+    <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
 </html>
